@@ -31,43 +31,15 @@ VALUES ('muzyczna', 'Łukasz Wojciech M. Tworzydło', '2018'),
 ('Israel & Jordan', 'The Last Expedition!', 'JustTravelToday & luqastro :>', 'Just Travel Today', 'https://youtu.be/BhQvj6F6Wk4')
 
 ==> Zapytania do bazy danych [o wypisanie wartości]:
-# a) wyświetl rodzaje ksiązek, które rozpoczęto publikować w 2018 roku
-# SELECT rodzaj_ksiazki FROM adv_books WHERE rok_rozpoczecia ='2018'
-# b) wyświetl rodzaje ksiązek, które rozpoczęto publikować w 2019 roku
-# SELECT rodzaj_ksiazki FROM adv_books WHERE rok_rozpoczecia ='2019'
-# c) wyświetl wszystkie rodzaje książek [zarówno z 2019, jak i z 2018 roku]
-# SELECT rodzaj_ksiazki, rok_rozpoczecia FROM adv_books
-# d) wybierz rodzaj książki oraz wyświetl kiedy rozpoczęto ich publikację
-# wraz z nazwą strony oraz odnośnikiem do niniejszej strony internetowej
-# =>>> muzyczna
-# SELECT adv_books.rodzaj_ksiazki, adv_books.rok_rozpoczecia, adv_websites.nazwa_strony,
-adv_websites.strona_www FROM adv_books JOIN adv_websites ON adv_books.autor = adv_websites.tworca_strony
-WHERE adv_books.rodzaj_ksiazki = 'muzyczna' AND adv_websites.rodzaj_strony = 'muzyczna'
-# =>>> edukacyjna
-# SELECT adv_books.rodzaj_ksiazki, adv_books.rok_rozpoczecia, adv_websites.nazwa_strony,
-adv_websites.strona_www FROM adv_books JOIN adv_websites ON adv_books.autor = adv_websites.tworca_strony
-WHERE adv_books.rodzaj_ksiazki = 'edukacyjna' AND adv_websites.rodzaj_strony = 'edukacyjna'
-# =>>> naukowa
-# SELECT adv_books.rodzaj_ksiazki, adv_books.rok_rozpoczecia, adv_websites.nazwa_strony,
-adv_websites.strona_www FROM adv_books JOIN adv_websites ON adv_books.autor = adv_websites.tworca_strony
-WHERE adv_books.rodzaj_ksiazki = 'naukowa' AND adv_websites.rodzaj_strony = 'naukowa'
-# =>>> religijna
-# SELECT adv_books.rodzaj_ksiazki, adv_books.rok_rozpoczecia, adv_websites.nazwa_strony,
-adv_websites.strona_www FROM adv_books JOIN adv_websites ON adv_books.autor = adv_websites.tworca_strony
-WHERE adv_books.rodzaj_ksiazki = 'religijna' AND adv_websites.rodzaj_strony = 'religijna'
-# =>>> projektowa
-# SELECT adv_books.rodzaj_ksiazki, adv_books.rok_rozpoczecia, adv_websites.nazwa_strony,
-adv_websites.strona_www FROM adv_books JOIN adv_websites ON adv_books.autor = adv_websites.tworca_strony
-WHERE adv_books.rodzaj_ksiazki = 'projektowa' AND adv_websites.rodzaj_strony = 'projektowa'
-# e) wyświetl nazwę strony podróżniczej wraz z nazwami oraz linkami do filmików
-# SELECT adv_websites.nazwa_strony, adv_travel.nazwa_filmu, adv_travel.www_youtube FROM
-adv_websites JOIN adv_travel ON adv_websites.nazwa_strony = adv_travel.nazwa_kanalu
-# f) wyświetl wszystkie rodzaje i nazwy stron internetowych
-# SELECT adv_websites.rodzaj_strony, adv_websites.nazwa_strony FROM adv_websites
-# g) wyświetl wyłącznie nazwę strony wydawnictwa oraz podróżniczej
-# wraz z linkiem do oficjalnej strony internetowej www
-# SELECT adv_websites.nazwa_strony, adv_websites.strona_www FROM adv_websites
-WHERE (adv_websites.nazwa_strony = 'ADV Publishing' OR adv_websites.nazwa_strony = 'Just Travel Today')
+a) wyświetl rodzaje ksiązek, które rozpoczęto publikować w 2018 roku
+b) wyświetl rodzaje ksiązek, które rozpoczęto publikować w 2019 roku
+c) wyświetl wszystkie rodzaje książek [zarówno z 2019, jak i z 2018 roku]
+d) wybierz rodzaj książki oraz wyświetl kiedy rozpoczęto ich publikację
+wraz z nazwą strony oraz odnośnikiem do niniejszej strony internetowej
+e) wyświetl nazwę strony podróżniczej wraz z nazwami oraz linkami do filmików
+f) wyświetl wszystkie rodzaje i nazwy stron internetowych
+g) wyświetl wyłącznie nazwę strony wydawnictwa oraz podróżniczej
+wraz z linkiem do oficjalnej strony internetowej www
 
 ==> Utwórz w JAVA program, który będzie wyświetlać poniższe menu
 1) Dodaj nowy rekord do bazy danych, jeden wiersz (krotkę) do tabeli 'adv_books'
