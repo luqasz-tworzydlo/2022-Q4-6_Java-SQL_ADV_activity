@@ -69,6 +69,28 @@ public class F_CaseTWO
     {
         System.out.println("\n=> Niestety ta funkcja jest obecnie niedostępna :<" +
                 "\n   Kontynuuj, aby wrócić do menu oraz wybrać inną opcję");
+        System.out.println("\n=> Znaczy się... już nieaktualne ;P" +
+                "\n=> Niniejsza funkcja została już wprowadzona ^_^\n");
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/5_adv_activity", "root", "");
+
+            // dodanie nowego, dowolnego rekordu do tabeli 'adv_books'
+            PreparedStatement stmtD = con.prepareStatement("DELETE FROM adv_books WHERE rodzaj_ksiazki = ?");
+
+            System.out.println("Wpisz kategorię ksiązek, którą chcesz usunąć [np. muzyczna]");
+            String Parameter_Delete;
+            Parameter_Delete = sc.next();
+
+            ((PreparedStatement) stmtD).setString(1, Parameter_Delete); // dane do parametru 'rodzaj_ksiazki'
+            stmtD.executeUpdate(); // usunięcie wybranego rekordu z tabeli 'adv_books' według parametru 'rodzaj_ksiazki'
+
+            System.out.println("\nGratulacje! Usunąłeś/aś wybrany rekord ( " + Parameter_Delete + " ) z tabeli bazy danych! :>");
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
     public static void AddARecord() // case no 1
     {
